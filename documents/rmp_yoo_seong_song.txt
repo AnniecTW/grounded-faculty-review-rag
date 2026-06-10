@@ -1,0 +1,98 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Yoo-Seong Song
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 5.0/5
+WOULD_TAKE_AGAIN: 100%
+DIFFICULTY: 1.8/5
+NUMBER_OF_RATINGS: 4
+
+SUMMARY
+
+Students consistently describe Yoo-Seong Song as an excellent instructor with strong industry and business research experience. Reviews emphasize practical coursework, real-world projects, informative lectures, and valuable professional applications. Students frequently recommend both the instructor and his courses.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS380
+DATE: Dec 22, 2022
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: N/A
+
+Student Comment:
+Great teacher and great course content.
+
+Tags:
+- Group Projects
+
+----------------------------------------
+REVIEW 2
+----------------------------------------
+
+COURSE: 590IC
+DATE: Jun 8, 2016
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: No
+
+Student Comment:
+The course focused on a real consulting project for an actual client. Although the workload was substantial, students felt the experience was worthwhile and highly applicable to future careers. The reviewer strongly recommended both the course and the instructor.
+
+----------------------------------------
+REVIEW 3
+----------------------------------------
+
+COURSE: LIS590ACL
+DATE: Dec 23, 2015
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Grade: A
+Textbook: No
+
+Student Comment:
+The reviewer described Yoo-Seong Song as an excellent instructor whose experience in business and research contributed to a high level of expertise. The course was considered highly informative and one of the student's favorite courses in the program.
+
+----------------------------------------
+REVIEW 4
+----------------------------------------
+
+COURSE: LIS590ACL
+DATE: Jan 8, 2014
+
+Quality: 5.0
+Difficulty: 1.0
+
+For Credit: Yes
+Textbook: Yes
+Online Class: Yes
+
+Student Comment:
+The reviewer considered this one of the most practical and useful courses in the program. Professor Song was praised for extensive business research experience, sensitivity to student needs, and assignments that closely resembled real-world projects. The student greatly enjoyed the course.
+
+KEY THEMES
+
+- Strong industry and business research experience
+- Practical and career-relevant coursework
+- Real-world consulting projects
+- Highly informative instruction
+- Student-centered teaching style
+- Consistently positive student feedback
+- Frequently recommended by students

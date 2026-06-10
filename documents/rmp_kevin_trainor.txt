@@ -1,0 +1,137 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Kevin Trainor
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 3.9/5
+WOULD_TAKE_AGAIN: 72%
+DIFFICULTY: 2.7/5
+NUMBER_OF_RATINGS: 7
+
+SUMMARY
+
+Student reviews describe Kevin Trainor as a dedicated and knowledgeable programming instructor who teaches IS430. Many students praise his thorough course materials, detailed explanations, accessibility outside class, and commitment to student success. While several reviewers note that the workload is substantial and the lectures can feel slow-paced, most agree that the course provides strong preparation in Python programming and problem-solving skills.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS430
+DATE: Nov 4, 2025
+
+Quality: 2.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer felt that the lecture videos and homework tutorials became repetitive and that the course was heavily focused on library-related applications. Although the class was intended for library students, the reviewer did not find the content personally relevant.
+
+Tags:
+- Clear Grading Criteria
+- Lecture Heavy
+
+----------------------------------------
+REVIEW 2
+----------------------------------------
+
+COURSE: IS430
+DATE: Aug 31, 2023
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+Online Class: Yes
+
+Student Comment:
+The reviewer described Trainor as an amazing professor. Although the summer workload was heavy and grading turnaround could be slow, he was highly accessible, offered optional lab sessions, and genuinely cared about helping students succeed.
+
+Tags:
+- Clear Grading Criteria
+- Accessible Outside Class
+- Online Savvy
+
+----------------------------------------
+REVIEW 3
+----------------------------------------
+
+COURSE: IS430
+DATE: Apr 11, 2023
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer considered Kevin Trainor one of the best programming instructors they had ever had. His course materials, including recordings, lectures, and homework assignments, were highly detailed and helped students prepare effectively for coursework.
+
+----------------------------------------
+REVIEW 4
+----------------------------------------
+
+COURSE: IS430
+DATE: Dec 13, 2022
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer found Trainor extremely thorough in his explanations and assignments. Although the course was not considered exciting, it helped the student gain confidence in solving programming problems and learning Python.
+
+Tags:
+- Participation Matters
+- Clear Grading Criteria
+- Lots of Homework
+
+----------------------------------------
+REVIEW 5
+----------------------------------------
+
+COURSE: IS430
+DATE: Aug 8, 2022
+
+Quality: 4.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer initially struggled with the course but eventually adapted to the teaching style. They praised the extensive feedback, learning resources, and instructor investment in student success.
+
+Tags:
+- Clear Grading Criteria
+- Caring
+- Accessible Outside Class
+
+KEY THEMES
+
+- Strong Python programming instruction
+- Thorough course materials and assignments
+- Significant workload and homework requirements
+- Clear grading expectations
+- Accessible and supportive instructor
+- Strong preparation for programming problem-solving
+- Positive student outcomes despite course rigor

@@ -1,0 +1,143 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Brandon Batzloff
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 3.1/5
+WOULD_TAKE_AGAIN: 67%
+DIFFICULTY: 3.2/5
+NUMBER_OF_RATINGS: 9
+
+SUMMARY
+
+Student opinions on Brandon Batzloff are mixed. Positive reviews highlight his willingness to explain concepts, encourage class discussion, and remain accessible to students. However, several reviewers criticize his ability to explain difficult topics clearly and describe some courses as challenging, time-consuming, and heavily dependent on self-study. Reviews suggest that student experiences vary significantly depending on learning style and course expectations.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS203
+DATE: Feb 27, 2026
+
+Quality: 1.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer felt that the instructor made simple topics appear unnecessarily difficult.
+
+Tags:
+- Tough Grader
+- Lots of Homework
+
+----------------------------------------
+REVIEW 2
+----------------------------------------
+
+COURSE: IS203
+DATE: Dec 12, 2025
+
+Quality: 1.0
+Difficulty: 5.0
+
+For Credit: Yes
+Attendance: Mandatory
+Textbook: Yes
+
+Student Comment:
+The reviewer described the course as difficult and requiring significant effort outside class, including watching lecture videos and reading course materials. They felt the instructor did not explain concepts clearly and believed expectations were unnecessarily challenging.
+
+Tags:
+- Get Ready to Read
+- Participation Matters
+- Graded by Few Things
+
+----------------------------------------
+REVIEW 3
+----------------------------------------
+
+COURSE: IS203
+DATE: Apr 7, 2025
+
+Quality: 2.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer felt that the instructor was not effective at explaining concepts.
+
+----------------------------------------
+REVIEW 4
+----------------------------------------
+
+COURSE: IS203
+DATE: Jan 27, 2025
+
+Quality: 5.0
+Difficulty: 4.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer appreciated the instructor's effort to help students understand course topics and noted that he was accessible outside class. Course assessments consisted primarily of homework and bi-weekly comprehension exercises rather than traditional exams.
+
+Tags:
+- Participation Matters
+- Graded by Few Things
+- Accessible Outside Class
+
+----------------------------------------
+REVIEW 5
+----------------------------------------
+
+COURSE: IS145
+DATE: Nov 22, 2024
+
+Quality: 4.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Textbook: N/A
+
+Student Comment:
+The reviewer described Brandon Batzloff as a good professor who took time to explain concepts and encouraged class discussion. Some course organization issues were noted, but overall the experience was positive.
+
+----------------------------------------
+KEY THEMES
+
+Positive Themes:
+- Accessible outside class
+- Encourages class discussion
+- Invested in student learning
+- Helpful for motivated students
+- Alternative assessment methods instead of major exams
+
+Negative Themes:
+- Explanations can be unclear
+- Some students find concepts harder than necessary
+- Significant self-study required
+- Heavy reading and homework workload
+- Mixed satisfaction among students
+
+COURSES MENTIONED
+
+- IS203
+- IS145
+
+LIMITATIONS
+
+Only a subset of available reviews was collected. Student opinions are mixed and may vary depending on course, semester, and individual learning preferences.

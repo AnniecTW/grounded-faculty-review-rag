@@ -1,0 +1,32 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Jingrui He
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 5.0/5
+WOULD_TAKE_AGAIN: 100%
+DIFFICULTY: 3/5
+NUMBER_OF_RATINGS: 1
+
+COURSE: IS577
+DATE: Jan 13, 2022
+
+REVIEW
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+Online Class: Yes
+
+Student Comment:
+Professor He gives amazing lectures. The student took her data mining course during Fall 2021 and noted that she explained statistics and machine learning concepts very clearly. The slides covering machine learning topics were considered useful for preparing for job interviews.
+
+TAGS:
+- Inspirational
+- Clear Grading Criteria
+- Amazing Lectures

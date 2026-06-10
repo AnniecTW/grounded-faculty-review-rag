@@ -1,0 +1,105 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: Yoo-Seong Song
+TITLE: Associate Professor
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+EDUCATION
+
+- MSI, University of Michigan
+- MBA, University of Iowa
+
+CONTACT
+
+Office: Room 4129, 614 E. Daniel St.
+Phone: (217) 333-8021
+Email: yoosong@illinois.edu
+
+RESEARCH AREAS
+
+- Digital Health
+- Innovation Management
+- Product Development
+- Technology Consulting
+- Strategy Consulting
+- Knowledge Management
+- Experiential Learning
+
+RESEARCH FOCUS
+
+Research focuses on digital health, innovation management, product development, technology consulting, strategy consulting, knowledge management, and experiential learning. Current work frequently incorporates industry-sponsored projects and real-world consulting experiences.
+
+PROFESSIONAL APPOINTMENTS
+
+- Associate Professor, University Library
+- Affiliate Faculty, Center for East Asian and Pacific Studies
+
+HONORS AND AWARDS
+
+- WISE Instructor of the Year Award (2014)
+- Highly Commended Paper Award for Excellence by Emerald Publishing for research on electronic library services (2005)
+
+BIOGRAPHY
+
+Yoo-Seong Song is an associate professor at the School of Information Sciences and also holds an appointment at the University Library. Before joining academia, he earned an MBA from the University of Iowa and an MSI from the University of Michigan.
+
+Prior to joining the University of Illinois, he worked as a senior associate at Ernst & Young, specializing in e-commerce, high technology, and telecommunications consulting. He also worked at Accenture as a consultant and at Tellabs as a market intelligence analyst.
+
+As an entrepreneur, he co-founded two information service firms in Korea. He currently collaborates with domestic and international corporations to provide students with real-world consulting projects through experiential learning courses.
+
+INDUSTRY EXPERIENCE
+
+- Ernst & Young (Senior Associate)
+- Accenture (Consultant)
+- Tellabs (Market Intelligence Analyst)
+- Co-founder of two information service companies in Korea
+
+EXPERIENTIAL LEARNING PROJECTS (2022–2024)
+
+- Developing a digital transformation strategy for a telecommunications company
+- Assessing opportunities for Extended Reality (XR) in digital health and remote patient monitoring
+- Creating dashboards to visualize trends in clinical trials
+- Evaluating in-flight emergency medical services using XR technologies
+- Building dashboards to visualize public health conditions
+- Developing UI/UX recommendations for lifestyle management applications
+
+CURRENT COURSES
+
+- IS380B: Consulting for Information Professionals
+- IS589VSS: Independent Study
+- IS494ABR: Applied Business Research
+- IS514AC: Applied Business Research
+- IS534AC: Information Consulting
+
+TEACHING THEMES
+
+- Experiential learning
+- Industry consulting projects
+- Business research
+- Information consulting
+- Professional skill development
+- Real-world client engagement
+
+PUBLICATIONS AND SCHOLARSHIP
+
+Research and publications focus on:
+- Experiential learning
+- Embedded librarianship
+- University library strategy
+- Mobile device adoption
+- Information behavior
+- International business students
+
+RECOGNITIONS
+
+- Teachers Ranked Excellent (multiple semesters)
+- Recognized repeatedly by students for teaching excellence
+
+KEY THEMES
+
+- Strong industry and consulting background
+- Former Ernst & Young and Accenture consultant
+- Emphasis on real-world projects and experiential learning
+- Digital health and innovation management researcher
+- Business-oriented Information Management educator
+- Extensive collaboration with external organizations
+- Frequently recognized for teaching excellence

@@ -115,14 +115,19 @@ The domain I chose is student reviews of selected Information Management profess
                                    │
                                    ▼
 ┌─────────────────────────────────────────────┐
-│            Document Ingestion               │
-│ BeautifulSoup / requests                    │
+│             Source Documents                │
+│               (.txt files)                  │
+└─────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│             Document Ingestion              │
+│                (TextLoader)                 │
 └─────────────────────────────────────────────┘
                                    │
                                    ▼
 ┌─────────────────────────────────────────────┐
 │                 Chunking                    │
-│               │
 │ chunk_size=1000, overlap=150                │
 └─────────────────────────────────────────────┘
                                    │
@@ -160,13 +165,13 @@ The domain I chose is student reviews of selected Information Management profess
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-| Pipeline Stage           | AI Tool | Input Provided                                                            | Expected Output                                                                                     | Verification                                                                                                          |
-| ------------------------ | ------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Document Ingestion       | Claude  | Source URLs and project requirements                                      | Python code that downloads and extracts text from faculty profiles, review pages, and news articles | Verify that the extracted text matches the original pages and that all sources are successfully loaded                |
-| Chunking                 | Claude  | Chunking strategy (chunk size = 1000, overlap = 150) from planning.md     | A `chunk_text()` function                                                                           | Check several sample documents to ensure chunks respect the specified size and overlap while preserving context       |
-| Embedding + Vector Store | Claude  | Embedding model choice (`all-MiniLM-L6-v2`) and vector store requirements | Code that generates embeddings and stores them in ChromaDB                                          | Confirm that all chunks are embedded and can be retrieved from the vector database                                    |
-| Retrieval                | Claude  | Retrieval requirements (top-k = 5) and evaluation questions               | Retrieval code that performs similarity search against the vector store                             | Test each evaluation query and verify that relevant chunks appear among the retrieved results                         |
-| Generation               | Claude  | Prompt template, retrieved chunks, and expected answer format             | RAG pipeline code that generates answers using retrieved context                                    | Compare generated answers against expected answers in the evaluation plan and verify that sources are cited correctly |
+| Pipeline Stage           | AI Tool | Input Provided                                                            | Expected Output                                                         | Verification                                                                                                          |
+| ------------------------ | ------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Document Ingestion       | Claude  | Source URLs and project requirements                                      | Python code that loads .txt documents from the data directory           | Verify that all text files are loaded correctly                                                                       |
+| Chunking                 | Claude  | Chunking strategy (chunk size = 1000, overlap = 150) from planning.md     | A `chunk_text()` function                                               | Check several sample documents to ensure chunks respect the specified size and overlap while preserving context       |
+| Embedding + Vector Store | Claude  | Embedding model choice (`all-MiniLM-L6-v2`) and vector store requirements | Code that generates embeddings and stores them in ChromaDB              | Confirm that all chunks are embedded and can be retrieved from the vector database                                    |
+| Retrieval                | Claude  | Retrieval requirements (top-k = 5) and evaluation questions               | Retrieval code that performs similarity search against the vector store | Test each evaluation query and verify that relevant chunks appear among the retrieved results                         |
+| Generation               | Claude  | Prompt template, retrieved chunks, and expected answer format             | RAG pipeline code that generates answers using retrieved context        | Compare generated answers against expected answers in the evaluation plan and verify that sources are cited correctly |
 
 **Milestone 3 — Ingestion and chunking:**
 

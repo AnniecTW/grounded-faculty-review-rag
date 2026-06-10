@@ -1,0 +1,105 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: David Charles
+TITLE: Teaching Assistant Professor
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+EDUCATION
+
+- EdD, Organizational Change and Leadership, University of Southern California
+- MBA, Tuck School of Business, Dartmouth College
+- BS, Management Information Systems, University of Connecticut
+
+CONTACT
+
+Office: Room 251, 501 E. Daniel St.
+Email: dsc22@illinois.edu
+
+RESEARCH AREAS
+
+- Future of Work
+- Digital Transformation
+- Organizational Change
+- Innovation Leadership
+- Innovation Culture
+- Business Information Consulting
+- Data Analytics
+- Human-Centered Data
+- Leadership Development
+
+RESEARCH FOCUS
+
+Research focuses on the future of work for information professionals, strategic change through innovation and technology, innovation culture, business information consulting, and leadership development for information and technology professionals.
+
+PROFESSIONAL APPOINTMENTS
+
+- Faculty Affiliate, Department of Business Administration
+
+BIOGRAPHY
+
+David Charles is a Teaching Assistant Professor in the School of Information Sciences at the University of Illinois Urbana-Champaign.
+
+He brings more than fifteen years of industry experience in digital transformation, innovation strategy, business and people analytics, organizational change, and leadership development.
+
+Before entering academia, Charles served as Chief Digital and Innovation Officer and co-founder of Tallint Inc., a human-centered HR technology and services firm.
+
+Prior to that, he held multiple leadership positions at John Deere, including:
+
+- Program Executive
+- Enterprise Analytics Strategy Director
+- Workforce Planning and People Analytics Manager
+- Data-Driven Innovation Manager
+
+Earlier in his career, he worked as a strategy consultant and systems integration consultant.
+
+INDUSTRY EXPERIENCE
+
+- Chief Digital and Innovation Officer, Tallint Inc.
+- Co-founder, Tallint Inc.
+- Multiple executive and analytics leadership roles at John Deere
+- Strategy Consultant
+- Systems Integration Consultant
+
+LEADERSHIP AND PROFESSIONAL CERTIFICATIONS
+
+- International Coaching Federation
+- NeuroLeadership Institute
+- Korn Ferry Leadership Certifications
+- Lean Six Sigma Master Black Belt (Dartmouth)
+
+CURRENT COURSES
+
+- IS594CC: Change Catalyst
+- IS594CCO: Change Catalyst
+
+TEACHING THEMES
+
+- Change Management
+- Organizational Leadership
+- Digital Transformation
+- Innovation Strategy
+- Data-Driven Decision Making
+- Professional Development
+
+PRESENTATIONS AND SPEAKING TOPICS
+
+- The Inner Game of Innovation (2025)
+- Engagement in the School of Information Sciences (2024)
+- The Art of Leading Data Science Teams (2024)
+- Careers in Business Analytics (2022)
+- How People Analytics Is Transforming the People Function of the Future (2021)
+- Leveraging Technology to Live Your Best Professional Life (2020)
+
+RECOGNITIONS
+
+- Teachers Ranked Excellent (multiple semesters)
+- Active participant in iSchool community engagement and professional development initiatives
+
+KEY THEMES
+
+- Extensive industry leadership experience
+- Former executive and innovation leader
+- Expertise in digital transformation and organizational change
+- Strong focus on leadership and professional development
+- Background in business analytics and people analytics
+- Connects industry practice with classroom instruction
+- Experienced educator in change management and innovation strategy

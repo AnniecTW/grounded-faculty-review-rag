@@ -1,0 +1,87 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: Karen Wickett
+TITLE: Associate Professor
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+EDUCATION
+
+- PhD, Library and Information Science, University of Illinois Urbana-Champaign
+
+CONTACT
+
+Office: Room 335, 501 E. Daniel St.
+Email: wickett2@illinois.edu
+
+RESEARCH AREAS
+
+- Information Organization
+- Metadata
+- Knowledge Organization Systems
+- Data Curation
+- Information Modeling
+- Ontologies
+- Knowledge Representation
+- Information Access
+
+RESEARCH FOCUS
+
+Research focuses on information organization, metadata, and knowledge organization systems. Her work examines the conceptual and logical foundations of information systems, data curation, and methods for organizing and representing information.
+
+BIOGRAPHY
+
+Karen Wickett is an associate professor in the School of Information Sciences at the University of Illinois Urbana-Champaign. Her research explores the conceptual and logical foundations of information organization systems and artifacts.
+
+She is particularly interested in information systems involving documents, datasets, databases, digital objects, metadata records, and collections.
+
+Before joining the University of Illinois, Wickett served on the faculty of the School of Information at the University of Texas at Austin, where she taught and conducted research on information modeling, conceptual modeling, and data curation. She also completed postdoctoral research at the Center for Informatics Research in Science and Scholarship (CIRSS).
+
+RESEARCH INTERESTS
+
+- Metadata systems
+- Knowledge organization systems
+- Information modeling
+- Conceptual modeling
+- Data curation
+- Digital objects and collections
+- Database representation
+- Information system foundations
+
+CURRENT COURSES
+
+- IS589KMW: Independent Study
+- IS515CC: Information Modeling
+
+TEACHING THEMES
+
+- Information modeling
+- Metadata design
+- Knowledge organization
+- Data curation
+- Conceptual foundations of information systems
+
+SELECTED PUBLICATIONS
+
+- Metadata as a Site for Critical Inquiry (2023)
+- Critical Data Modeling and the Basic Representation Model (2023)
+- Relational Data Paradigms: What Do We Learn by Taking the Materiality of Databases Seriously? (2020)
+- A Logic-Based Framework for Collection/Item Metadata Relationships (2018)
+- Documenting Provenance in Non-Computational Workflows (2018)
+
+RECOGNITIONS
+
+- Teachers Ranked Excellent (multiple semesters)
+- Faculty representative at ASIS&T (2025)
+- Active contributor to information science research communities
+
+KEY THEMES
+
+- Expert in metadata and information organization
+- Focus on conceptual and logical foundations of information systems
+- Researcher in data curation and information modeling
+- Strong background in knowledge representation and ontologies
+- Experienced educator in information modeling and metadata-related topics
+- Frequently recognized for teaching excellence
+
+KNOWLEDGE BASE NOTE
+
+No student reviews were available in the collected Rate My Professors data. Information about Karen Wickett in this knowledge base is primarily based on official university sources.

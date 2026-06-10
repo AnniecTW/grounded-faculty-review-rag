@@ -1,0 +1,152 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Madelyn Sanfilippo
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 4.1/5
+WOULD_TAKE_AGAIN: 58%
+DIFFICULTY: 2.9/5
+NUMBER_OF_RATINGS: 7
+
+SUMMARY
+
+Student reviews generally describe Madelyn Sanfilippo as a caring, approachable, and supportive professor who provides helpful feedback and reasonable grading. Many students appreciate her willingness to help and her flexible assignment structure. However, some reviewers find the lectures boring or overly focused on reading slides, and several note that the course relies heavily on readings and memorization.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS202
+DATE: May 2, 2025
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: N/A
+
+Student Comment:
+Professor Sanfilippo is understanding and provides helpful feedback. Review sessions are useful, assignments are well spaced throughout the semester, and she genuinely wants students to succeed.
+
+Tags:
+- Clear Grading Criteria
+- Gives Good Feedback
+- Caring
+
+----------------------------------------
+REVIEW 2
+----------------------------------------
+
+COURSE: IS202
+DATE: Dec 18, 2024
+
+Quality: 2.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer felt that the lectures mainly consisted of reading slides. While they described the professor as nice and accommodating, they found the lecture experience unengaging.
+
+Tags:
+- Respected
+- Lecture Heavy
+
+----------------------------------------
+REVIEW 3
+----------------------------------------
+
+COURSE: IS202
+DATE: Dec 11, 2024
+
+Quality: 3.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Grade: A+
+Textbook: N/A
+
+Student Comment:
+The reviewer considered the class easy but very boring. Assessments included online tests, papers, and homework assignments. They appreciated the professor's understanding nature but felt lectures lacked structure and focus.
+
+Tags:
+- Lecture Heavy
+
+----------------------------------------
+REVIEW 4
+----------------------------------------
+
+COURSE: IS202
+DATE: Nov 21, 2024
+
+Quality: 4.0
+Difficulty: 4.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer felt the course itself was not particularly exciting but thought the professor handled it well. A concern was the heavy emphasis on readings and memorizing details from assigned materials.
+
+Tags:
+- Tough Grader
+- Get Ready to Read
+- So Many Papers
+
+----------------------------------------
+REVIEW 5
+----------------------------------------
+
+COURSE: IS202
+DATE: Apr 13, 2023
+
+Quality: 5.0
+Difficulty: 2.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A+
+Textbook: N/A
+
+Student Comment:
+The reviewer described Sanfilippo as understanding and flexible regarding deadlines. Assignments were spaced out appropriately, and grading was considered fair and generous.
+
+Tags:
+- Clear Grading Criteria
+- Gives Good Feedback
+- Caring
+
+KEY THEMES
+
+Positive Themes:
+- Caring and understanding instructor
+- Helpful feedback and review sessions
+- Flexible and reasonable course structure
+- Clear grading criteria
+- Student-centered teaching approach
+- Fair or generous grading
+
+Negative Themes:
+- Lectures can feel boring or slide-focused
+- Reading-intensive coursework
+- Significant memorization required
+- Multiple writing assignments and papers
+- Course engagement varies by student
+
+COURSES MENTIONED
+
+- IS202
+
+OVERALL STUDENT IMPRESSION
+
+Most students view Madelyn Sanfilippo positively because of her supportive teaching style and willingness to help students succeed. Criticism tends to focus on course delivery and lecture format rather than the instructor's attitude or commitment to students.

@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 # --- Configuration (mirrors the Chunking Strategy section of planning.md) ---
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).parent / "documents"
 CHUNK_SIZE = 1000      # characters
 CHUNK_OVERLAP = 150    # characters
 

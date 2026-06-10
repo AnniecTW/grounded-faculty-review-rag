@@ -1,0 +1,72 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: Jingrui He
+TITLE: Professor and MSIM Program Director
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+CONTACT
+
+Office: Room 5146, 614 E. Daniel St.
+Email: jingrui@illinois.edu
+Website: https://publish.illinois.edu/jingruih/index.html
+
+RESEARCH AREAS
+
+- Machine Learning
+- Data Mining
+- Artificial Intelligence
+- Data Analytics
+- Network Analysis
+- Social Network Analysis
+- Agricultural Data Science
+- Sustainability Applications
+
+RESEARCH FOCUS
+
+Designing, building, and testing methods that use automated and semi-automated approaches to explore, understand, characterize, and predict real-world data using statistical and machine learning techniques.
+
+PROFESSIONAL APPOINTMENTS
+
+- Faculty Affiliate, National Center for Supercomputing Applications (NCSA)
+- Faculty Affiliate, Illinois Informatics Institute
+- Faculty Affiliate, Center for Digital Agriculture (CDA)
+- Faculty Affiliate, School of Computing and Data Science
+
+HONORS AND AWARDS
+
+- ICDM Mining Research Outstanding Paper Award (2025)
+- NeurIPS Top Reviewer (2025)
+- Amazon Research Award (2025)
+- ACM Distinguished Member (2023)
+- AAAI Senior Member (2023)
+- Outstanding Academic Title (2020)
+- IBM Faculty Award (2018)
+- NSF CAREER Award (2016)
+
+BIOGRAPHY
+
+Jingrui He joined the School of Information Sciences at the University of Illinois Urbana-Champaign in 2012. Her research focuses on heterogeneous machine learning, active learning, neural networks, and self-supervised learning, with applications in sustainability, agriculture, social network analysis, healthcare, and finance.
+
+She has received numerous awards and recognitions for research contributions in machine learning and data mining, including NSF CAREER, IBM Faculty Awards, and ACM Distinguished Member recognition.
+
+CURRENT COURSES
+
+- IS 204: Independent Study
+- IS 517: Data Mining
+- IS 593: Independent Study
+
+ACTIVE RESEARCH PROJECTS
+
+- Artificial Intelligence for Future Agricultural Resilience
+- Modeling Heterogeneity of Heterogeneous Graphs
+- Explainable AI Frameworks for Dynamic Heterogeneous Graph Analysis
+- AI-Assisted Network Analysis
+- Trustworthy and Explainable AI Systems
+
+KEY THEMES
+
+- Machine learning and data mining expert
+- MSIM Program Director
+- Highly accomplished AI researcher
+- Extensive interdisciplinary collaborations
+- Strong record of awards and research leadership
+- Active in teaching data mining and advanced analytics courses

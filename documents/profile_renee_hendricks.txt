@@ -1,0 +1,101 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: Renee Hendricks
+TITLE: Teaching Assistant Professor
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+EDUCATION
+
+- PhD, Industrial and Systems Engineering, Binghamton University
+
+CONTACT
+
+Office: Room 4168, 614 E. Daniel St.
+Email: reneeh2@illinois.edu
+
+RESEARCH AREAS
+
+- Public Health Informatics
+- Explainable Artificial Intelligence (XAI)
+- Interpretable Algorithms
+- Fuzzy Logic
+- Process Mining
+- Human-Computer Interaction (HCI)
+
+RESEARCH FOCUS
+
+Research focuses on public health informatics, explainable and interpretable artificial intelligence, fuzzy logic, process mining, and human-computer interaction.
+
+PROFESSIONAL APPOINTMENTS
+
+- Faculty Affiliate, Illinois Informatics
+
+BIOGRAPHY
+
+Renee Hendricks joined the School of Information Sciences in 2022.
+
+Before joining the University of Illinois, she held multiple technical and leadership positions within U.S. federal agencies, including:
+
+- Systems Engineer, Transportation Security Administration (TSA)
+- Biometrics Analyst, Department of Homeland Security (DHS)
+- Test and Evaluation Branch Chief, U.S. Customs and Border Protection (CBP)
+- Research and Development Manager, Federal Aviation Administration (FAA)
+- Research Fellow, U.S. Department of Veterans Affairs (VA)
+
+Prior to her federal government service, Hendricks was a faculty member at Purdue University, where she taught in the aeronautical program and conducted research related to biometrics and aviation security.
+
+INDUSTRY AND GOVERNMENT EXPERIENCE
+
+- Transportation Security Administration (TSA)
+- Department of Homeland Security (DHS)
+- U.S. Customs and Border Protection (CBP)
+- Federal Aviation Administration (FAA)
+- U.S. Department of Veterans Affairs (VA)
+- Purdue University
+
+CURRENT COURSES
+
+- IS189RMH: Independent Study
+- IS226A: Introduction to Human-Computer Interaction
+- IS389RMH: Independent Study
+- IS419ACG: Entrepreneurial IT Design
+- IS419ACU: Entrepreneurial IT Design
+- IS589RMH: Independent Study
+
+TEACHING THEMES
+
+- Human-Computer Interaction (HCI)
+- Entrepreneurial IT Design
+- Public Health Informatics
+- Applied Information Technology
+- User-Centered Design
+
+SELECTED RESEARCH TOPICS
+
+- Parkinson's Disease Data Analysis
+- Clinical Scale Interpretation
+- Cluster Analysis
+- Public Health Informatics
+- Explainable AI
+- Process Mining
+
+SELECTED PUBLICATIONS
+
+- A Systematic Review of Parkinson's Disease Cluster Analysis Research (2021)
+- An Investigation into the Use and Meaning of Parkinson's Disease Clinical Scales (2021)
+- Cluster Analysis of Categorical Variables of Parkinson's Disease Patients (2021)
+
+RECOGNITIONS
+
+- Teachers Ranked Excellent (multiple semesters)
+- Record Number of Instructors Recognized for Teaching in Fall 2025
+- Recognized by students for teaching excellence across multiple years
+
+KEY THEMES
+
+- Public health informatics specialist
+- Explainable and interpretable AI researcher
+- Extensive federal government experience
+- Background in biometrics and security systems
+- Teaches HCI and entrepreneurial technology design
+- Combines research, government, and industry perspectives
+- Frequently recognized for teaching excellence

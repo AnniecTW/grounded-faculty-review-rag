@@ -1,0 +1,57 @@
+SOURCE_TYPE: FacultyDirectory
+ORGANIZATION: School of Information Sciences
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+DESCRIPTION
+
+Faculty directory listing professors, teaching faculty, and researchers affiliated with the School of Information Sciences.
+
+PURPOSE
+
+This directory serves as a reference for identifying faculty members, their titles, and their primary research areas.
+
+FACULTY INCLUDED IN KNOWLEDGE BASE
+
+- Jingrui He
+  - Professor
+  - Machine Learning, Data Mining, Artificial Intelligence
+
+- Yoo-Seong Song
+  - Associate Professor
+  - Consulting, Innovation Management, Experiential Learning
+
+- Karen Wickett
+  - Associate Professor
+  - Metadata, Information Organization, Data Curation
+
+- David Charles
+  - Teaching Assistant Professor
+  - Digital Transformation, Change Management, Leadership
+
+- Renee Hendricks
+  - Teaching Assistant Professor
+  - Human-Computer Interaction, Public Health Informatics, Explainable AI
+
+- Madelyn Sanfilippo
+  - Associate Professor
+  - Information Governance, Privacy, Policy
+
+- John Weible
+  - Teaching Assistant Professor
+  - Information Technology Management
+
+- Kevin Trainor
+  - Teaching Assistant Professor
+  - Programming, Information Processing
+
+- Martin Wolske
+  - Adjunct Faculty
+  - Community Informatics
+
+- Brandon Batzloff
+  - Teaching Assistant Professor
+  - Information Management Education
+
+KNOWLEDGE BASE NOTE
+
+The faculty directory is used primarily for faculty identification and research-area lookup. Detailed information about individual professors is available in their corresponding faculty profile documents.

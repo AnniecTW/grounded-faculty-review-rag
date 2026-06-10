@@ -1,0 +1,132 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: John Weible
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 3.7/5
+WOULD_TAKE_AGAIN: 60%
+DIFFICULTY: 3.5/5
+NUMBER_OF_RATINGS: 6
+
+SUMMARY
+
+Student opinions on John Weible are mixed. Many students praise his industry experience, caring attitude, and commitment to helping students succeed. Positive reviews describe him as one of the strongest instructors in the iSchool and highlight practical projects, useful feedback, and engaging real-world insights. However, some students criticize course organization, grading difficulty, and unclear expectations regarding assignments and exams.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS597
+DATE: Aug 31, 2025
+
+Quality: 2.0
+Difficulty: 4.0
+
+Student Comment:
+The final project was only briefly mentioned during the course and was not clearly explained until near the end of the semester. The reviewer found the class difficult to prepare for and not particularly engaging, although the material itself was useful.
+
+----------------------------------------
+REVIEW 2
+----------------------------------------
+
+COURSE: IS597
+DATE: Apr 24, 2025
+
+Quality: 1.0
+Difficulty: 5.0
+
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: N/A
+
+Student Comment:
+The reviewer felt that the course lacked structure and could be difficult to stay engaged with. They also noted a heavy workload and challenging grading standards.
+
+Tags:
+- Tough Grader
+- Lots of Homework
+- Graded by Few Things
+
+----------------------------------------
+REVIEW 3
+----------------------------------------
+
+COURSE: IS597
+DATE: Dec 18, 2024
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: N/A
+
+Student Comment:
+The reviewer appreciated that the course focused on practical knowledge applicable to future studies and careers. Rather than repeating textbook content, the class emphasized logic, independent learning, and real-world problem solving. The reviewer described Weible as caring and passionate about teaching.
+
+Tags:
+- Group Projects
+- Inspirational
+- Caring
+
+----------------------------------------
+REVIEW 4
+----------------------------------------
+
+COURSE: IS597
+DATE: Apr 20, 2021
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Not Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+Online Class: Yes
+
+Student Comment:
+The reviewer described Weible as one of the best instructors in the iSchool. Although homework required significant effort, the course was considered highly educational and worthwhile.
+
+Tags:
+- Gives Good Feedback
+- Caring
+
+----------------------------------------
+REVIEW 5
+----------------------------------------
+
+COURSE: IS590PR
+DATE: May 26, 2019
+
+Quality: 5.0
+Difficulty: 3.0
+
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer praised Weible's industry experience and ability to explain concepts clearly. Assignments and lectures were considered well designed, and the instructor was viewed as highly supportive of students. The course included practical projects and interactive review activities.
+
+Tags:
+- Gives Good Feedback
+- Participation Matters
+- Amazing Lectures
+
+KEY THEMES
+
+- Strong industry experience
+- Practical and career-oriented learning
+- Caring and supportive instructor
+- Helpful feedback and student engagement
+- Real-world projects and applications
+- Mixed opinions regarding course organization
+- Some concerns about grading difficulty and workload
+- Frequently praised by students despite criticism from a minority of reviews

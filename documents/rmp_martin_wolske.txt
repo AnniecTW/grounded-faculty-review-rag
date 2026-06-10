@@ -1,0 +1,48 @@
+SOURCE_TYPE: RateMyProfessor
+PROFESSOR: Martin Wolske
+DEPARTMENT: Information Science
+UNIVERSITY: University of Illinois Urbana-Champaign
+
+OVERALL_RATING: 2.0/5
+WOULD_TAKE_AGAIN: 0%
+DIFFICULTY: 1.0/5
+NUMBER_OF_RATINGS: 1
+
+SUMMARY
+
+Limited review data is available for Martin Wolske. The single available review describes him as a caring professor but criticizes the course content for lacking technical depth and engagement.
+
+----------------------------------------
+REVIEW 1
+----------------------------------------
+
+COURSE: IS401
+DATE: Dec 22, 2022
+
+Quality: 2.0
+Difficulty: 1.0
+
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: Yes
+
+Student Comment:
+The reviewer described Martin Wolske as a good and caring professor but felt that the course content was boring and lacked sufficient technical material. The reviewer suggested that the class should include more technical topics.
+
+Tags:
+- Get Ready to Read
+- Caring
+- Graded by Few Things
+
+KEY THEMES
+
+- Caring and supportive instructor
+- Course content perceived as lacking technical depth
+- Low course difficulty
+- Reading-focused coursework
+- Very limited review data available
+
+LIMITATIONS
+
+Only one student review was available at the time of data collection. Conclusions about teaching quality and course experience should be interpreted cautiously due to the small sample size.
