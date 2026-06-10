@@ -49,11 +49,11 @@ The domain I chose is student reviews of selected Information Management profess
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** 1000 characters
 
-**Overlap:**
+**Overlap:** 150 characters
 
-**Reasoning:**
+**Reasoning:** Most of my documents are relatively short faculty profiles, review pages, and university news articles. I chose a chunk size of 1000 characters with a 150 characters overlap. A larger chunk size helps preserve context in documents that contain lists of faculty names or teaching awards, where splitting the text too aggressively could produce chunks containing only names without sufficient context. The overlap helps retain information that may appear near chunk boundaries.
 
 ---
 
@@ -65,11 +65,11 @@ The domain I chose is student reviews of selected Information Management profess
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model:** I am using the all-MiniLM-L6-v2 embedding model through Sentence Transformers because it provides a good balance between retrieval quality and efficiency for a relatively small corpus.
 
-**Top-k:**
+**Top-k:** I will use a top-k value of 5. Since information about a professor may be distributed across multiple sources, retrieving the top five most relevant chunks helps provide more complete context while still limiting irrelevant information.
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** If I were deploying this system for real users and cost were not a constraint, I would consider using a larger and more accurate embedding model. The most important factors would be retrieval accuracy on educational and course-related content, as well as the ability to correctly associtate professors, courses, and student reviews. Multilingual support would be less important because the corpus primarily consists of English-language content related to a U.S. university. Latency would still be a consideration, but I would prioritize retrieval quality over speed.
 
 ---
 
@@ -80,13 +80,13 @@ The domain I chose is student reviews of selected Information Management profess
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
 
-| #   | Question | Expected answer |
-| --- | -------- | --------------- |
-| 1   |          |                 |
-| 2   |          |                 |
-| 3   |          |                 |
-| 4   |          |                 |
-| 5   |          |                 |
+| #   | Question                                                                                                | Expected answer                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 1   | Who should I look up if I am interested in machine learning courses in the IM program?                  | Jingrui He                                                                               |
+| 2   | Who is the MSIM Program Director?                                                                       | Jingrui He                                                                               |
+| 3   | Which professor has significant consulting and industry experience that is reflected in their teaching? | Yoo-Seong Song                                                                           |
+| 4   | Which professors in the knowledge base were recognized as Teachers Ranked Excellent in Spring 2025?     | Jingrui He, Yoo-Seong Song, Kevin Trainor, John Weible, and Karen Wickett (among others) |
+| 5   | Which professor specializes in information governance and privacy-related topics?                       | Madelyn Sanfilippo                                                                       |
 
 ---
 
@@ -96,9 +96,8 @@ The domain I chose is student reviews of selected Information Management profess
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
-
-2.
+1. Conflicting or inconsistent information across sources. Student reviews on RMP are subjective and may not always align with official faculty profiles. As as result, the system may retrieve information that presents different perspective on the same professor.
+2. Important context may be split across chunk boundaries. Some documents contain lists of faculty names or award recipients, and if the chunk size is too small, a chunk may contain only names without the surrounding explanation. This could reduce retrieval quality and lead to incomplete answers.
 
 ---
 
@@ -109,6 +108,43 @@ The domain I chose is student reviews of selected Information Management profess
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+```text
+                    UIUC IM Professor Sources
+       (RMP Reviews, Faculty Profiles, University News)
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│            Document Ingestion               │
+│ BeautifulSoup / requests                    │
+└─────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│                 Chunking                    │
+│               │
+│ chunk_size=1000, overlap=150                │
+└─────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│         Embedding + Vector Store            │
+│ all-MiniLM-L6-v2 + ChromaDB                 │
+└─────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│                 Retrieval                   │
+│ Similarity Search (top-k = 5)               │
+└─────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────┐
+│                Generation                   │
+│ Groq                                        │
+│ Answer + Source Attribution                 │
+└─────────────────────────────────────────────┘
+```
 
 ---
 
@@ -123,6 +159,14 @@ The domain I chose is student reviews of selected Information Management profess
      "I'll use AI to help me code" is not a plan.
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
+
+| Pipeline Stage           | AI Tool | Input Provided                                                            | Expected Output                                                                                     | Verification                                                                                                          |
+| ------------------------ | ------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Document Ingestion       | Claude  | Source URLs and project requirements                                      | Python code that downloads and extracts text from faculty profiles, review pages, and news articles | Verify that the extracted text matches the original pages and that all sources are successfully loaded                |
+| Chunking                 | Claude  | Chunking strategy (chunk size = 1000, overlap = 150) from planning.md     | A `chunk_text()` function                                                                           | Check several sample documents to ensure chunks respect the specified size and overlap while preserving context       |
+| Embedding + Vector Store | Claude  | Embedding model choice (`all-MiniLM-L6-v2`) and vector store requirements | Code that generates embeddings and stores them in ChromaDB                                          | Confirm that all chunks are embedded and can be retrieved from the vector database                                    |
+| Retrieval                | Claude  | Retrieval requirements (top-k = 5) and evaluation questions               | Retrieval code that performs similarity search against the vector store                             | Test each evaluation query and verify that relevant chunks appear among the retrieved results                         |
+| Generation               | Claude  | Prompt template, retrieved chunks, and expected answer format             | RAG pipeline code that generates answers using retrieved context                                    | Compare generated answers against expected answers in the evaluation plan and verify that sources are cited correctly |
 
 **Milestone 3 — Ingestion and chunking:**
 
