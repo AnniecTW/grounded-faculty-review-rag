@@ -159,6 +159,111 @@ def chunk_documents(
     return all_chunks
 
 
+# --- Structured (section-aware) chunking ---------------------------------------
+# These structured-chunking helpers improve retrieval on the highly structured
+# faculty documents. See the Failure Case Analysis in README.md for the before/
+# after distances that motivated this. Two ideas:
+#   1. Split on section boundaries (blank lines) instead of blind character
+#      windows, so a chunk is a coherent section rather than a mix of fragments.
+#   2. Prepend a "PROFESSOR: <name>" header to every chunk so the person's name
+#      travels with their content and is not diluted or split away.
+def extract_header(text: str) -> str:
+    """Return a short identity header for a document (e.g. its PROFESSOR line)."""
+    for line in text.splitlines():
+        if line.startswith("PROFESSOR:"):
+            return line.strip()
+    return ""
+
+
+def _split_sections(text: str) -> list[str]:
+    """Split text into sections on blank lines, dropping empties."""
+    return [s.strip() for s in text.split("\n\n") if s.strip()]
+
+
+def chunk_text_by_section(
+    text: str,
+    chunk_size: int = CHUNK_SIZE,
+    overlap: int = CHUNK_OVERLAP,
+    pack: bool = True,
+) -> list[str]:
+    """Chunk text along section (blank-line) boundaries.
+
+    ``pack=True``  -> greedily combine sections up to ``chunk_size`` (good for
+                      prose-like profiles, keeps related sections together).
+    ``pack=False`` -> emit one chunk per section (good for directory listings,
+                      so each faculty entry becomes its own focused chunk).
+
+    Any single section longer than ``chunk_size`` falls back to the character
+    window splitter so no content is lost.
+    """
+    sections = _split_sections(text)
+    chunks: list[str] = []
+
+    if not pack:
+        for sec in sections:
+            if len(sec) > chunk_size:
+                chunks.extend(p for p, _, _ in chunk_text(sec, chunk_size, overlap))
+            else:
+                chunks.append(sec)
+        return chunks
+
+    buf = ""
+    for sec in sections:
+        if len(sec) > chunk_size:
+            if buf:
+                chunks.append(buf)
+                buf = ""
+            chunks.extend(p for p, _, _ in chunk_text(sec, chunk_size, overlap))
+            continue
+        if not buf:
+            buf = sec
+        elif len(buf) + 2 + len(sec) <= chunk_size:
+            buf = f"{buf}\n\n{sec}"
+        else:
+            chunks.append(buf)
+            buf = sec
+    if buf:
+        chunks.append(buf)
+    return chunks
+
+
+def chunk_documents_structured(
+    documents: list[Document],
+    chunk_size: int = CHUNK_SIZE,
+    overlap: int = CHUNK_OVERLAP,
+) -> list[Chunk]:
+    """Section-aware chunking with per-document strategy and name headers.
+
+    Directory-style documents are split one entry per chunk; everything else is
+    packed by section. Each chunk is prefixed with the document's PROFESSOR
+    header (when present) so the professor's name stays attached to the content.
+    """
+    all_chunks: list[Chunk] = []
+    for doc in documents:
+        is_directory = (
+            "FacultyDirectory" in doc.text or doc.doc_id == "faculty_listing"
+        )
+        header = extract_header(doc.text)
+        pieces = chunk_text_by_section(
+            doc.text, chunk_size, overlap, pack=not is_directory
+        )
+        for i, piece in enumerate(pieces):
+            text = piece
+            if header and not piece.startswith(header):
+                text = f"{header}\n\n{piece}"
+            all_chunks.append(
+                Chunk(
+                    chunk_id=f"{doc.doc_id}::{i}",
+                    doc_id=doc.doc_id,
+                    source=doc.source,
+                    text=text,
+                    start=-1,  # section-based chunks are not contiguous offsets
+                    end=-1,
+                )
+            )
+    return all_chunks
+
+
 # --- Demonstration output -------------------------------------------------------
 def _preview(label: str, body: str) -> None:
     print(f"\n{'=' * 70}\n{label}\n{'=' * 70}")
@@ -169,7 +274,8 @@ def main() -> None:
     documents = load_documents()
     print(f"Loaded {len(documents)} documents from {DATA_DIR}")
 
-    chunks = chunk_documents(documents)
+    # Use the same section-aware chunking the retrieval pipeline uses.
+    chunks = chunk_documents_structured(documents)
 
     # 1) One cleaned document.
     sample_doc = documents[0]
@@ -186,7 +292,7 @@ def main() -> None:
         representative = [chunks[i * step] for i in range(count)]
         for c in representative:
             _preview(
-                f"CHUNK {c.chunk_id}  (chars {c.start}-{c.end}, len {len(c.text)})",
+                f"CHUNK {c.chunk_id}  (len {len(c.text)})",
                 c.text,
             )
 
