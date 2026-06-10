@@ -16,5 +16,8 @@ env/
 chroma_db/
 chroma/
 
+# Gradio cache
+.gradio/
+
 # macOS
 .DS_Store

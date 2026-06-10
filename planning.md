@@ -172,9 +172,3 @@ The domain I chose is student reviews of selected Information Management profess
 | Embedding + Vector Store | Claude  | Embedding model choice (`all-MiniLM-L6-v2`) and vector store requirements | Code that generates embeddings and stores them in ChromaDB              | Confirm that all chunks are embedded and can be retrieved from the vector database                                    |
 | Retrieval                | Claude  | Retrieval requirements (top-k = 5) and evaluation questions               | Retrieval code that performs similarity search against the vector store | Test each evaluation query and verify that relevant chunks appear among the retrieved results                         |
 | Generation               | Claude  | Prompt template, retrieved chunks, and expected answer format             | RAG pipeline code that generates answers using retrieved context        | Compare generated answers against expected answers in the evaluation plan and verify that sources are cited correctly |
-
-**Milestone 3 — Ingestion and chunking:**
-
-**Milestone 4 — Embedding and retrieval:**
-
-**Milestone 5 — Generation and interface:**
