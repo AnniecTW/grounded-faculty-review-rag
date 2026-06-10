@@ -4,6 +4,13 @@ A retrieval-augmented generation (RAG) system that answers questions about
 Information Management professors at the University of Illinois Urbana-Champaign,
 grounded in student reviews and faculty profiles.
 
+## Demo Videos
+
+Two Loom walkthroughs introducing the project:
+
+- [Part 1 — Walkthrough](https://www.loom.com/share/6d8dd7d564ea4a3c8b6d226a8c3a900d)
+- [Part 2 — Walkthrough](https://www.loom.com/share/e59bab63dc1d4b2b8788f7a94e9eec29)
+
 ## Domain
 
 <!-- What topic or category of knowledge does your system cover?
