@@ -119,11 +119,65 @@
 
 **Question that failed:**
 
+"Which professor specializes in information governance and privacy-related topics?"
+Expected answer: **Madelyn Sanfilippo**.
+
 **What the system returned:**
+
+The top-ranked chunk was **Karen Wickett**'s profile (her RESEARCH AREAS list), not
+Madelyn Sanfilippo. The correct chunk was only retrieved at rank 2.
+
+Before fix (character-window chunking, top-5):
+
+| rank | distance | source | chunk |
+|------|----------|--------|-------|
+| 1 | 0.4647 | profile_karen_wickett.txt | 0 |
+| 2 | 0.5080 | faculty_listing.txt | 1  *(Madelyn — correct)* |
+| 3 | 0.5240 | faculty_listing.txt | 0 |
+| 4 | 0.5415 | profile_david_charles.txt | 0 |
+| 5 | 0.5430 | profile_karen_wickett.txt | 3 |
 
 **Root cause (tied to a specific pipeline stage):**
 
+Two stages combined:
+
+1. **Data coverage** — There was no dedicated profile for Madelyn Sanfilippo. The
+   only place in the corpus linking her to "Information Governance, Privacy, Policy"
+   was a single line in `faculty_listing.txt`; the terms "governance"/"privacy"
+   appeared nowhere else (not even in her own RMP reviews).
+2. **Chunking (dilution, not splitting)** — `faculty_listing.txt` was chunked with
+   blind character windows, so one chunk held ~10 professors. Madelyn's single line
+   was diluted by everyone else's text, pushing the chunk's distance up to 0.508.
+   Meanwhile, the embedding model (all-MiniLM-L6-v2) treats Karen Wickett's
+   "information organization / metadata / knowledge representation" as semantically
+   close to "information governance / privacy," so her focused, single-topic chunk
+   won rank 1. (Note: 150-char overlap already prevented a true boundary split —
+   the failure was ranking/dilution, not a cut phrase.)
+
 **What you would change to fix it:**
+
+Both fixes were applied:
+
+1. **Added a dedicated `profile_madelyn_sanfilippo.txt`** assembled from the faculty
+   directory, RMP reviews, and the Teachers-Ranked-Excellent recognition.
+2. **Switched to section-aware structured chunking** (`chunk_documents_structured`
+   in `ingest.py`): the directory is split one faculty entry per chunk, profiles are
+   packed by section, and every chunk is prefixed with a `PROFESSOR: <name>` header
+   so the name travels with its content.
+
+After fix (section-aware chunking + Madelyn profile, top-5):
+
+| rank | distance | source | chunk |
+|------|----------|--------|-------|
+| 1 | 0.2272 | faculty_listing.txt | 11  *(Madelyn entry — correct)* |
+| 2 | 0.2826 | profile_madelyn_sanfilippo.txt | 0  *(Madelyn — correct)* |
+| 3 | 0.4405 | faculty_listing.txt | 15 |
+| 4 | 0.4724 | faculty_listing.txt | 8 |
+| 5 | 0.4802 | profile_karen_wickett.txt | 3 |
+
+Madelyn moved from rank 2 to **rank 1**, her best distance dropped from **0.508 to
+0.227**, and the previously-winning Karen Wickett chunk fell to rank 5. Reproduce
+with `python compare_chunking.py`.
 
 ---
 

@@ -1,0 +1,49 @@
+SOURCE_TYPE: FacultyProfile
+PROFESSOR: Madelyn Sanfilippo
+TITLE: Associate Professor
+AFFILIATION: School of Information Sciences, University of Illinois Urbana-Champaign
+
+RESEARCH AREAS
+
+- Information Governance
+- Privacy
+- Policy
+
+RESEARCH FOCUS
+
+Research focuses on information governance, privacy, and information policy, examining how information is regulated, governed, and protected across institutions and communities.
+
+TEACHING
+
+- IS202: Course in the Information Sciences curriculum (taught regularly)
+
+TEACHING THEMES
+
+- Information governance
+- Privacy and information policy
+- Reading-based and discussion-oriented coursework
+- Writing assignments and papers
+
+RECOGNITIONS
+
+- Teachers Ranked Excellent (Spring 2025)
+- Recognized by the iSchool among instructors ranked as excellent by students
+
+STUDENT IMPRESSION
+
+Student reviews generally describe Madelyn Sanfilippo as a caring, approachable, and supportive professor who provides helpful feedback and reasonable grading. Many students appreciate her willingness to help and her flexible assignment structure. Some reviewers find the lectures boring or overly focused on reading slides, and several note that the course relies heavily on readings and memorization.
+
+KEY THEMES
+
+- Specialist in information governance, privacy, and policy
+- Associate Professor in the School of Information Sciences
+- Caring and student-centered teaching approach
+- Clear grading criteria and helpful feedback
+- Reading-intensive coursework with multiple writing assignments
+- Recognized for teaching excellence (Teachers Ranked Excellent, Spring 2025)
+
+KNOWLEDGE BASE NOTE
+
+This profile was assembled from the iSchool faculty directory, Rate My Professors student
+reviews, and the Spring 2025 Teachers Ranked Excellent recognition, because a dedicated
+official faculty-profile page was not collected for this professor.
