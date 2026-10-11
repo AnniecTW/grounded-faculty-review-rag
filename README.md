@@ -1,284 +1,253 @@
-# The Unofficial Guide — Project 1
+# Grounded Faculty Review Assistant
 
-A retrieval-augmented generation (RAG) system that answers questions about
-Information Management professors at the University of Illinois Urbana-Champaign,
-grounded in student reviews and faculty profiles.
+A retrieval-augmented generation (RAG) assistant for exploring UIUC iSchool faculty expertise and student-reported course experiences.
 
-## Demo Videos
+The system retrieves relevant passages from faculty profiles, directory entries, and student reviews, then generates answers grounded in the retrieved evidence. When the available context is insufficient, it declines to answer instead of guessing.
 
-Two Loom walkthroughs introducing the project:
+## Demo
 
 - [Part 1 — Walkthrough](https://www.loom.com/share/6d8dd7d564ea4a3c8b6d226a8c3a900d)
 - [Part 2 — Walkthrough](https://www.loom.com/share/e59bab63dc1d4b2b8788f7a94e9eec29)
 
-## Domain
+## Why this project
 
-<!-- What topic or category of knowledge does your system cover?
-     Why is this knowledge valuable, and why is it hard to find through official channels?
-     Example: "Student reviews of CS professors at [university] — useful because official
-     course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+Information about faculty research areas, teaching experiences, and course expectations is scattered across official university pages and student review sites.
 
-Student reviews of selected Information Management professors at the University of
-Illinois Urbana-Champaign. The system surfaces insight into professors' teaching and
-grading styles to help IM students — and students from other programs considering IM
-courses — make more informed course-selection decisions. This knowledge is valuable but
-hard to find through official channels because it is scattered across review sites and
-faculty pages. Gathering the relevant pages and passages into one knowledge base makes
-the information easier to access and lets the system generate more comprehensive answers.
+This project combines these sources into a searchable knowledge base so students can ask natural-language questions and receive concise answers with the supporting source documents.
 
----
+Student reviews are subjective and incomplete, so the system treats them as supplementary context rather than authoritative facts.
 
-## Document Sources
+## Key capabilities
 
-<!-- List every source you collected documents from.
-     Be specific: include URLs, subreddit names, forum thread titles, or file names.
-     Aim for variety — sources that together cover different subtopics or perspectives. -->
+- Semantic search over faculty profiles and student reviews
+- Section-aware document chunking
+- Local embedding generation with `all-MiniLM-L6-v2`
+- Cosine-similarity retrieval through ChromaDB
+- Grounded answer generation with Groq-hosted Llama 3.3
+- Programmatic source attribution based on retrieval metadata
+- Explicit refusal when the retrieved context does not support an answer
 
-| #   | Source | Type | URL or file path |
-| --- | ------ | ---- | ---------------- |
-| 1   | Jingrui He | Rate My Professors | https://www.ratemyprofessors.com/professor/2766039 |
-| 2   | Yoo-Seong Song | Rate My Professors | https://www.ratemyprofessors.com/professor/1861158 |
-| 3   | Kevin Trainor | Rate My Professors | https://www.ratemyprofessors.com/professor/1861162 |
-| 4   | John Weible | Rate My Professors | https://www.ratemyprofessors.com/professor/1861164 |
-| 5   | Karen Wickett | Rate My Professors | https://www.ratemyprofessors.com/professor/1861165 |
-| 6   | Martin Wolske | Rate My Professors | https://www.ratemyprofessors.com/professor/1861166 |
-| 7   | Brandon Batzloff | Rate My Professors | https://www.ratemyprofessors.com/professor/2924903 |
-| 8   | Madelyn Sanfilippo | Rate My Professors | https://www.ratemyprofessors.com/professor/2827901 |
-| 9   | Jingrui He | Faculty profile | https://ischool.illinois.edu/people/jingrui-he |
-| 10  | Yoo-Seong Song | Faculty profile | https://ischool.illinois.edu/people/yoo-seong-song |
-| 11  | Karen Wickett | Faculty profile | https://ischool.illinois.edu/people/karen-wickett |
-| 12  | David Charles | Faculty profile | https://ischool.illinois.edu/people/david-charles |
-| 13  | Renee Hendricks | Faculty profile | https://ischool.illinois.edu/people/renee-hendricks |
-| 14  | iSchool Faculty Directory | Faculty directory | https://ischool.illinois.edu/people/faculty |
-| 15  | Teachers Ranked Excellent (Spring 2025) | News article | https://ischool.illinois.edu/news-events/news/2025/09/record-number-instructors-ranked-excellent |
+## Architecture
 
----
+```text
+Source documents
+      │
+      ▼
+Cleaning and section-aware chunking
+      │
+      ▼
+Normalized embeddings
+      │
+      ▼
+Persistent ChromaDB index
+      │
+      ▼
+User query → top-k semantic retrieval
+      │
+      ▼
+Context-only LLM prompt
+      │
+      ▼
+Answer + retrieved source list
+```
 
-## Chunking Strategy
+## Data sources
 
-<!-- Describe your chunking approach with enough specificity that someone else could reproduce it.
-     Include:
-     - Chunk size (characters or tokens) and why that size fits your documents
-     - Overlap size and why (or why not) you used overlap
-     - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
-     - What your final chunk count was across all documents -->
+The corpus combines three types of public sources:
 
-**Chunk size:** ~1000 characters.
+- Student reviews from Rate My Professors
+- UIUC iSchool faculty profiles and the faculty directory
+- The iSchool's “Teachers Ranked Excellent” announcement
 
-**Overlap:** 150 characters.
+The collected documents cover faculty research areas, professional backgrounds, teaching-related comments, and selected academic recognitions.
 
-**Why these choices fit your documents:** The corpus is short, highly structured text
-(faculty profiles, review pages, a directory listing), so chunking is section-aware rather
-than blind character windows (`chunk_documents_structured` in `ingest.py`). The faculty
-directory is split one entry per chunk so each professor's listing stays a focused,
-self-contained chunk; profiles and reviews are packed along blank-line section boundaries
-up to ~1000 characters; and each chunk is prefixed with a `PROFESSOR: <name>` header so the
-professor's name travels with its content. The 150-character overlap is a fallback for any
-single section longer than the chunk size. Preprocessing is light: the source files are
-already plain text, so cleaning only normalizes line endings, strips trailing whitespace,
-and collapses repeated blank lines.
+## Technical design
 
-**Final chunk count:** 66 chunks across 16 documents.
+### Document ingestion and chunking
 
----
+The source files are stored as plain-text documents. Preprocessing performs light normalization:
 
-## Embedding Model
+- Normalize line endings
+- Remove trailing whitespace
+- Collapse repeated blank lines
+- Preserve blank-line boundaries between logical sections
 
-<!-- Name the embedding model you used and explain your choice.
-     Then answer: if you were deploying this system for real users and cost wasn't a constraint,
-     what tradeoffs would you weigh in choosing a different model?
-     Consider: context length limits, multilingual support, accuracy on domain-specific text,
-     latency, and local vs. API-hosted. -->
+The final chunking strategy is section-aware:
 
-**Model used:** `all-MiniLM-L6-v2` via sentence-transformers, run locally. Embeddings are
-normalized and stored in ChromaDB with cosine distance; retrieval returns the top 5 chunks
-per query. The model offers a good balance of retrieval quality and efficiency for a
-relatively small corpus.
+- Faculty directory entries are split one professor per chunk
+- Faculty profiles and reviews are packed by section up to approximately 1,000 characters
+- A 150-character overlap is used when an individual section exceeds the target size
+- Each chunk is prefixed with a `PROFESSOR: <name>` header so the professor identity remains attached to the content
 
-**Production tradeoff reflection:** Deploying this for real users with no cost constraint, I
-would consider a larger, more accurate embedding model. The factors I would weigh most are
-retrieval accuracy on educational and course-related text and the ability to correctly
-associate professors, courses, and reviews. Multilingual support matters less here because
-the corpus is English content about a U.S. university. Latency would still be a
-consideration, but I would prioritize retrieval quality over speed.
+This approach keeps related information together and prevents a single directory chunk from mixing information from many professors.
 
----
+### Embeddings and retrieval
 
-## Grounded Generation
+The system uses `all-MiniLM-L6-v2` through Sentence Transformers. Embeddings are generated locally, normalized, and stored in ChromaDB with cosine distance.
 
-<!-- Explain how your system enforces grounding — how does it prevent the LLM from answering
-     beyond the retrieved documents?
-     Describe both your system prompt (what instruction you gave the model) and any structural
-     choices (e.g., how you formatted the context, whether you filtered low-relevance chunks).
-     Do not just say "I told it to use the documents" — show the actual instruction or explain
-     the mechanism. -->
+For each query, the system retrieves the top five chunks together with metadata such as:
 
-**System prompt grounding instruction:** Generation uses Groq's `llama-3.3-70b-versatile`
-at `temperature=0`. The retrieved chunks are the only context placed in the prompt, and the
-system prompt instructs the model to: (1) answer only from the provided context, (2) use no
-prior knowledge and invent no facts, and (3) reply with exactly
-`"I don't have enough information on that."` when the context is insufficient. Question 2 in
-the evaluation below shows this working — the model declines rather than guessing when the
-supporting chunk is not retrieved.
+- Source filename
+- Document identifier
+- Chunk position
+- Character offsets
+- Cosine distance
 
-**How source attribution is surfaced in the response:** The source list is computed
-programmatically from retrieval metadata — the source filenames come from ChromaDB, not from
-the model's text — so citations cannot be fabricated. The Gradio interface shows the answer
-and, below it, the de-duplicated list of source filenames the answer was drawn from. When the
-model reports insufficient context, no sources are listed.
+The index is rebuilt from the current document corpus each time the embedding pipeline runs, preventing stale or duplicated entries.
 
----
+### Grounded generation
 
-## Evaluation Report
+Retrieved chunks are the only context passed to the language model. The generation prompt instructs the model to:
 
-<!-- Run your 5 test questions from planning.md through your system and record the results.
-     Be honest — a partially accurate or inaccurate result that you explain well is more
-     valuable than a suspiciously perfect result. -->
+1. Answer only from the supplied context
+2. Avoid using prior knowledge or inventing facts
+3. Return exactly `I don't have enough information on that.` when the evidence is insufficient
+4. Keep the answer concise and specific
 
-| #   | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
-| --- | -------- | --------------- | ---------------------------- | ----------------- | ----------------- |
-| 1   | Who to look up for machine learning courses in the IM program? | Jingrui He | Identifies Jingrui He as a machine learning / data mining expert | Relevant | Accurate |
-| 2   | Who is the MSIM Program Director? | Jingrui He | "I don't have enough information on that." | Off-target | Correct refusal (grounded — see note) |
-| 3   | Which professor has significant consulting / industry experience? | Yoo-Seong Song | Yoo-Seong Song (former Ernst & Young and Accenture consultant) | Relevant | Accurate |
-| 4   | Which professors were Teachers Ranked Excellent in Spring 2025? | Jingrui He, Yoo-Seong Song, Kevin Trainor, John Weible, Karen Wickett (among others) | He, Song, Wickett, Sanfilippo, Weible | Relevant | Partially accurate |
-| 5   | Which professor specializes in information governance and privacy? | Madelyn Sanfilippo | Madelyn Sanfilippo | Relevant | Accurate |
+The Gradio interface displays the answer together with a de-duplicated source list.
 
-> **Note on Q2:** The answer (Jingrui He) does exist in the corpus, in
-> `profile_jingrui_he.txt` ("TITLE: Professor and MSIM Program Director"), but that chunk
-> was not retrieved into the top-5, so it never reached the model. Given the context it
-> actually received, the model behaved correctly by declining rather than guessing — this is
-> grounding working as intended, with the gap on the retrieval side.
+The source list is generated from ChromaDB metadata rather than from the model's response, which prevents the model from fabricating citations.
 
-**Retrieval quality:** Relevant / Partially relevant / Off-target  
-**Response accuracy:** Accurate / Partially accurate / Inaccurate
+## Evaluation
 
----
+The system was tested with five representative queries covering research expertise, program information, professional experience, academic recognition, and privacy-related research.
 
-## Failure Case Analysis
+| Query type | Result | Interpretation |
+|---|---|---|
+| Machine learning expertise | Accurate | Retrieved the relevant faculty profile |
+| MSIM program director | Correct refusal | The answer existed in the corpus, but the supporting chunk was not retrieved |
+| Consulting and industry experience | Accurate | Retrieved the relevant professional background |
+| Teachers Ranked Excellent recognition | Partially complete | The retrieval results contained relevant faculty, but the answer missed part of the expected list |
+| Information governance and privacy | Accurate after refinement | Retrieved the correct faculty entry after improving the corpus and chunking |
 
-<!-- Identify at least one question where retrieval or generation did not work as expected.
-     Write a specific explanation of *why* it failed, tied to a part of the pipeline.
+The evaluation showed that the grounding behavior was effective at preventing unsupported answers. It also showed that retrieval quality, especially corpus coverage and chunk structure, was the main bottleneck.
 
-     "The answer was wrong" is not an explanation.
+## Retrieval failure and fix
 
-     "The relevant information was split across a chunk boundary, so retrieval returned
-     only half the context — the model didn't have enough to answer correctly" is an explanation.
+One test query asked:
 
-     "The embedding model treated the professor's nickname as out-of-vocabulary and returned
-     results from an unrelated review" is an explanation. -->
+> Which professor specializes in information governance and privacy-related topics?
 
-**Question that failed:**
+### Before the fix
 
-"Which professor specializes in information governance and privacy-related topics?"
-Expected answer: **Madelyn Sanfilippo**.
+The correct professor was Madelyn Sanfilippo, but the system ranked Karen Wickett's profile first.
 
-**What the system returned:**
+| Rank | Source | Distance |
+|---|---|---:|
+| 1 | Karen Wickett profile | 0.4647 |
+| 2 | Faculty directory entry for Madelyn Sanfilippo | 0.5080 |
 
-The top-ranked chunk was **Karen Wickett**'s profile (her RESEARCH AREAS list), not
-Madelyn Sanfilippo. The correct chunk was only retrieved at rank 2.
+Two issues contributed to the failure:
 
-Before fix (character-window chunking, top-5):
+1. Madelyn's relevant research area appeared only in one line of the faculty directory. There was no dedicated profile containing the same terminology.
+2. The directory had been split using blind character windows, so one chunk combined information from multiple professors. This diluted the signal for Madelyn's entry.
 
-| rank | distance | source                    | chunk                   |
-| ---- | -------- | ------------------------- | ----------------------- |
-| 1    | 0.4647   | profile_karen_wickett.txt | 0                       |
-| 2    | 0.5080   | faculty_listing.txt       | 1 _(Madelyn — correct)_ |
-| 3    | 0.5240   | faculty_listing.txt       | 0                       |
-| 4    | 0.5415   | profile_david_charles.txt | 0                       |
-| 5    | 0.5430   | profile_karen_wickett.txt | 3                       |
+The failure was caused by retrieval quality rather than by a phrase being cut at a chunk boundary. The existing overlap already preserved the relevant text.
 
-**Root cause (tied to a specific pipeline stage):**
+### After the fix
 
-Two stages combined:
+Two changes were applied:
 
-1. **Data coverage** — There was no dedicated profile for Madelyn Sanfilippo. The
-   only place in the corpus linking her to "Information Governance, Privacy, Policy"
-   was a single line in `faculty_listing.txt`; the terms "governance"/"privacy"
-   appeared nowhere else (not even in her own RMP reviews).
-2. **Chunking (dilution, not splitting)** — `faculty_listing.txt` was chunked with
-   blind character windows, so one chunk held ~10 professors. Madelyn's single line
-   was diluted by everyone else's text, pushing the chunk's distance up to 0.508.
-   Meanwhile, the embedding model (all-MiniLM-L6-v2) treats Karen Wickett's
-   "information organization / metadata / knowledge representation" as semantically
-   close to "information governance / privacy," so her focused, single-topic chunk
-   won rank 1. (Note: 150-char overlap already prevented a true boundary split —
-   the failure was ranking/dilution, not a cut phrase.)
+1. Added a dedicated Madelyn Sanfilippo profile assembled from the available public sources
+2. Replaced blind directory chunking with section-aware chunking and professor-prefixed metadata
 
-**What you would change to fix it:**
+| Rank | Source | Distance |
+|---|---|---:|
+| 1 | Madelyn entry in the faculty directory | 0.2272 |
+| 2 | Dedicated Madelyn profile | 0.2826 |
+| 5 | Karen Wickett profile | 0.4802 |
 
-Both fixes were applied:
+The correct result moved from rank 2 to rank 1, and its cosine distance improved from `0.508` to `0.227`.
 
-1. **Added a dedicated `profile_madelyn_sanfilippo.txt`** assembled from the faculty
-   directory, RMP reviews, and the Teachers-Ranked-Excellent recognition.
-2. **Switched to section-aware structured chunking** (`chunk_documents_structured`
-   in `ingest.py`): the directory is split one faculty entry per chunk, profiles are
-   packed by section, and every chunk is prefixed with a `PROFESSOR: <name>` header
-   so the name travels with its content.
+The comparison can be reproduced with:
 
-After fix (section-aware chunking + Madelyn profile, top-5):
+```bash
+python compare_chunking.py
+```
 
-| rank | distance | source                         | chunk                          |
-| ---- | -------- | ------------------------------ | ------------------------------ |
-| 1    | 0.2272   | faculty_listing.txt            | 11 _(Madelyn entry — correct)_ |
-| 2    | 0.2826   | profile_madelyn_sanfilippo.txt | 0 _(Madelyn — correct)_        |
-| 3    | 0.4405   | faculty_listing.txt            | 15                             |
-| 4    | 0.4724   | faculty_listing.txt            | 8                              |
-| 5    | 0.4802   | profile_karen_wickett.txt      | 3                              |
+## Running locally
 
-Madelyn moved from rank 2 to **rank 1**, her best distance dropped from **0.508 to
-0.227**, and the previously-winning Karen Wickett chunk fell to rank 5. Reproduce
-with `python compare_chunking.py`.
+### 1. Clone the repository
 
----
+```bash
+git clone https://github.com/AnniecTW/grounded-faculty-review-rag.git
+cd grounded-faculty-review-rag
+```
 
-## Spec Reflection
+### 2. Create a virtual environment
 
-<!-- Reflect on how planning.md shaped your implementation.
-     Answer both questions with at least 2–3 sentences each. -->
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
 
-**One way the spec helped you during implementation:** Writing the Chunking Strategy and
-Retrieval Approach in `planning.md` first meant the implementation had concrete parameters to
-target — chunk size 1000, overlap 150, `all-MiniLM-L6-v2`, top-k 5 — rather than guessing
-during coding. The pipeline diagram also mapped cleanly onto modules (`ingest.py`,
-`embed_retrieve.py`, `rag.py`), which kept each stage focused.
+On Windows:
 
-**One way your implementation diverged from the spec, and why:** The spec described
-character-window chunking, but the implementation moved to section-aware structured chunking.
-This came directly from a retrieval failure: the "governance / privacy" query ranked the wrong
-professor first because blind windows diluted the faculty directory. Splitting the directory one
-entry per chunk and prefixing chunks with the professor's name fixed the ranking (see Failure
-Case Analysis), so the divergence was a deliberate, evidence-driven improvement over the
-original plan.
+```powershell
+.venv\Scripts\activate
+```
 
----
+### 3. Install dependencies
 
-## AI Usage
+```bash
+pip install -r requirements.txt
+```
 
-<!-- Describe at least 2 specific instances where you used an AI tool during this project.
-     For each: what did you give the AI as input, what did it produce, and what did you
-     change, override, or direct differently?
+### 4. Configure the Groq API key
 
-     "I used Claude to help me code" is not sufficient.
-     "I gave Claude my Chunking Strategy section from planning.md and asked it to implement
-     chunk_text(). It returned a function using a fixed character split. I overrode the
-     chunk size from 500 to 200 because my documents are short reviews, not long guides." -->
+```bash
+cp .env.example .env
+```
 
-**Instance 1**
+Add your key to `.env`:
 
-- _What I gave the AI:_ The Retrieval Approach section of `planning.md` and the request to
-  build the embedding + vector store + retrieval stage.
-- _What it produced:_ `embed_retrieve.py` — embedding chunks with `all-MiniLM-L6-v2`, storing
-  them in ChromaDB with source/position metadata, and a top-k cosine retrieval function.
-- _What I changed or overrode:_ Set cosine distance with normalized embeddings and had the
-  collection rebuild on each run to stay in sync with the corpus, rather than appending.
+```text
+GROQ_API_KEY=your_key_here
+```
 
-**Instance 2**
+### 5. Build the embedding index
 
-- _What I gave the AI:_ The failing retrieval output for the "governance / privacy" query
-  (Karen Wickett ranked above Madelyn Sanfilippo) and asked it to diagnose and fix it.
-- _What it produced:_ A diagnosis (data-coverage gap plus chunk dilution in the directory
-  file), a new `profile_madelyn_sanfilippo.txt`, and section-aware structured chunking in
-  `ingest.py`, plus `compare_chunking.py` to measure the before/after.
-- _What I changed or overrode:_ Kept the original character-window chunker alongside the new
-  one as a comparison baseline instead of deleting it, so the before/after numbers stay
-  reproducible.
+```bash
+python embed_retrieve.py
+```
+
+### 6. Launch the Gradio interface
+
+```bash
+python rag.py
+```
+
+To run the evaluation queries from the command line:
+
+```bash
+python rag.py --cli
+```
+
+## Project structure
+
+```text
+.
+├── documents/          # Plain-text source documents
+├── ingest.py           # Cleaning and structured chunking
+├── embed_retrieve.py   # Embeddings, ChromaDB indexing, retrieval
+├── rag.py              # Grounded generation and Gradio interface
+├── compare_chunking.py # Before-and-after retrieval comparison
+├── requirements.txt
+└── .env.example
+```
+
+## Limitations and next steps
+
+The current system is a small prototype, so several improvements remain:
+
+- Expand and regularly refresh the source corpus
+- Add metadata filtering for professor names and source types
+- Compare semantic retrieval with hybrid keyword-plus-vector retrieval
+- Evaluate a reranking model for ambiguous queries
+- Track metrics such as Recall@k, MRR, and answer support rate
+- Add a larger evaluation set with manually verified expected answers
+- Handle conflicting or outdated student reviews more explicitly
+
+## Project origin
+
+This project began with an AI201 starter repository and was independently extended with structured document processing, retrieval implementation, grounded generation, evaluation, and failure analysis.
